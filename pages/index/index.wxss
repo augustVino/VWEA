@@ -1,0 +1,77 @@
+/**index.wxss**/
+.container{
+  position: relative;
+}
+.bgModule{
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* opacity: .6; */
+}
+.mainModule{
+  padding-top: 120rpx;
+}
+.userInfo{
+  display: flex;
+  align-items: center;
+  padding: 0 50rpx;
+}
+.userInfo .avatar{
+  display: block;
+  overflow: hidden;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.userInfo .name{
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.userInfo .userInfoBtn{
+  font-size: 30rpx;
+  font-weight: normal;
+}
+.cityInfo {
+  padding: 0 50rpx;
+  font-size: 66rpx;
+  color: #fff;
+}
+.cityInfo .cityBox{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.cityInfo .cityBox .locationIco{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.cityInfo .cityBox .name{
+  flex: 1;
+}
+.cityInfo .cityBox .locationDown{
+  margin-left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.cityInfo .time{
+  font-size: 30rpx;
+}
+.weatherInfo{
+  position: relative;
+  width: 100%;
+  height: 360rpx;
+  font-size: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+}

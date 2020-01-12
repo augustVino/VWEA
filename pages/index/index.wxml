@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container">
+  <image class="bgModule" src="/images/weather_bg_01.jpg" mode="scaleToFill"></image>
+
+  <view class="mainModule">
+    <!-- 用户信息 -->
+    <view class="userInfo">
+      <button class="userInfoBtn" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <open-data class='avatar' type='userAvatarUrl'></open-data>
+        <open-data class='name' type='userNickName'></open-data>
+      </block>
+    </view>
+    <!-- 城市信息 -->
+    <view class="cityInfo">
+        <view class='cityBox' bindtap='toCitychoose'>
+          <image wx:if='{{located}}' class='locationIco' src='/images/location_s_w.png'></image>
+          <view class="name">
+            <text class="name" wx:if='{{hasCurWeatherInfo}}'>{{curWeatherInfo.basic.admin_area+'-'+curWeatherInfo.basic.location}}</text>
+            <text class="name" wx:else>'定位中'</text>
+
+            <image class='locationDown' src='/images/down.png'></image>
+          </view>
+        </view>
+        <view class='time' wx:if='{{hasCurWeatherInfo}}'>{{curWeatherInfo.update.loc}} 更新</view>
+    </view>
+    <!-- 天气信息 -->
+    <view class="weatherInfo">
+      {{curWeatherInfo.now.tmp || '-'}} ℃
+    </view>
+  </view>
+  
+  <!-- 原始代码 -->
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-nickname">{{latitude}}</text>
+      <text class="userinfo-nickname">{{longitude}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>
