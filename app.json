@@ -1,20 +1,20 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#f60",
-    "navigationStyle": "custom",
-    "navigationBarTitleText": "VWeather",
-    "navigationBarTextStyle": "black"
-  },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "定位以获取当前位置天气信息"
+    "pages": [
+        "pages/index/index",
+        "pages/about/about",
+        "pages/citychoose/citychoose",
+        "pages/setting/setting",
+        "pages/systeminfo/systeminfo"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#999",
+        "navigationBarTitleText": "VWeather",
+        "navigationBarTextStyle": "white"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "定位以获取当前位置天气信息"
+        }
     }
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
 }
