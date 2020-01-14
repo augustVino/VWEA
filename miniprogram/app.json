@@ -1,0 +1,24 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/about/index",
+        
+        "pages/guideIndex/index",
+        "pages/userConsole/userConsole",
+        "pages/storageConsole/storageConsole"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#b8bab9",
+        "navigationBarTitleText": "VWeather",
+        "navigationBarTextStyle": "black"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "定位以获取当前位置天气信息"
+        }
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}

@@ -1,0 +1,59 @@
+/* pages/about/index.wxss */
+page{
+    background: #F8F8F8;
+    color: #333;
+}
+.icoBox,.icoInfoBox{
+    background: #FFF;
+    text-align: center;
+    padding: 10rpx 0;
+}
+.icoBox .ico{
+    width: 240rpx;
+}
+.icoInfoBox .info{
+    font-size: 28rpx;
+}
+.icoInfoBox .share{
+    margin: 30rpx auto;
+    font-size: 26rpx;
+}
+
+.contact{
+    background: #FFF;
+    padding: 30rpx 30rpx 0;
+    margin-bottom: 30rpx;
+}
+.contact .label{
+    margin-bottom: 30rpx;
+    align-self: center;
+}
+
+.contact .list .item{
+    width: 100%;
+    display: flex;
+    padding: 20rpx 0;
+    font-size: 26rpx;
+    color: #666;
+}
+.contact .list .item .detail{
+    flex: 1;
+    text-align: right;
+    align-self: center;
+}
+.contact .list .item .itemIco{
+    display: block;
+    width: 50rpx;
+}
+.contact .list .item .detail.thx{
+    text-align: left;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60rpx;
+  font-size: 22rpx;
+  color: #333;
+}

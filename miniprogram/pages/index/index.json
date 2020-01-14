@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "VWeather",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        
+    }
+}
