@@ -271,7 +271,7 @@ Page({
     // 跳转详情
     toDetail(){
         wx.navigateTo({
-            url: '/pages/about/index',
+            url: '/pages/about/about',
         })
     }
 })

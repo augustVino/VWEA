@@ -1,0 +1,6 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "usingComponents": {
+        "slideTab": "../../components/tabBar/tabBar"
+    }
+}

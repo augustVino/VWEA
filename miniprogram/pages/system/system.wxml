@@ -1,0 +1,148 @@
+<view class="pageTitle">
+    系统信息
+</view>
+<view class="cells">
+    <view class="cell">
+        <view class="label">设备品牌</view>
+        <view class="info">{{systemInfo.brand}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">设备型号</view>
+        <view class="info">{{systemInfo.model}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">设备像素比</view>
+        <view class="info">{{systemInfo.pixelRatio}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">屏幕宽度(px)</view>
+        <view class="info">{{systemInfo.screenWidth}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">屏幕高度(px)</view>
+        <view class="info">{{systemInfo.screenHeight}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">可使用窗口宽度(px)</view>
+        <view class="info">{{systemInfo.windowWidth}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">可使用窗口高度(px)</view>
+        <view class="info">{{systemInfo.windowHeight}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">状态栏的高度(px)</view>
+        <view class="info">{{systemInfo.statusBarHeight}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">微信设置的语言</view>
+        <view class="info">{{systemInfo.language}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">微信版本号</view>
+        <view class="info">{{systemInfo.version}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">客户端平台</view>
+        <view class="info">{{systemInfo.platform}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">用户字体大小(px)</view>
+        <view class="info">{{systemInfo.fontSizeSetting}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">客户端基础库版本</view>
+        <view class="info">{{systemInfo.SDKVersion}}</view>
+    </view>
+</view>
+<view class="cells">
+    <view class="cell">
+        <view class="label">设备电量</view>
+        <view class="info">{{systemInfo.batteryLevel}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">是否正在充电中</view>
+        <view class="info">{{systemInfo.batteryIsCharging}}</view>
+    </view>
+</view>
+<view class="cells">
+    <view class="cell">
+        <view class="label">是否支持NFC</view>
+        <view class="info">{{systemInfo.NFCInfo}}</view>
+    </view>
+</view>
+<view class="cells">
+    <view class="cell">
+        <view class="label">当前网络类型</view>
+        <view class="info">{{systemInfo.networkType}}</view>
+    </view>
+</view>
+
+<view class="cells">
+    <view class="cell">
+        <view class="label">拨打电话</view>
+        <view class="info f-link" bindtap="phoneCall" data-num="10086">10086</view>
+    </view>
+</view>
+
+<view class="cells">
+    <view class="cell">
+        <view class="label">扫码</view>
+        <view class="info f-link" bindtap="scanCode">点我</view>
+    </view>
+    <view class="cell">
+        <view class="label">扫码的内容</view>
+        <view class="info">{{scanCodeInfo.result}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">扫码的类型</view>
+        <view class="info">{{scanCodeInfo.scanType}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">所扫码的字符集</view>
+        <view class="info">{{scanCodeInfo.charSet}}</view>
+    </view>
+    <view class="cell">
+        <view class="label">base64编码</view>
+        <view class="info">{{scanCodeInfo.rawData}}</view>
+    </view>
+</view>
+
+<view class="cells">
+    <view class="cell">
+        <view class="label">短振动(15 ms)</view>
+        <view class="info f-link" bindtap="vibrateShort">点我</view>
+    </view>
+    <view class="cell">
+        <view class="label">长振动(400 ms)</view>
+        <view class="info f-link" bindtap="vibrateLong">点我</view>
+    </view>
+</view>
+
+<view class="cells">
+    <view class="cell">
+        <view class="label">清除缓存</view>
+        <view class="info f-link" bindtap="clearStorage">点我</view>
+    </view>
+</view>
+
+<view class="pageTitle">
+    设置屏幕亮度
+</view>
+<view class="cells">
+    <slider bindchange="sliderchange" show-value value="{{curBrightness*100}}"/>
+</view>
+<view class="cells">
+    <view class="cell">
+        <view class="label">设置屏幕常亮(只在当前小程序)</view>
+        <view class="info f-link">
+            <switch checked="{{switchScreenStatus}}" bindchange="keepScreenOn"/>
+        </view>
+    </view>
+</view>
+
+
+
+<view class="pageTitle">
+    
+</view>

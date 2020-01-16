@@ -1,0 +1,57 @@
+<!--miniprogram/pages/todoList/todoList.wxml-->
+<view class="pageTitle">
+    TODO-LIST
+</view>
+
+<slideTab tList="{{statusType}}" bind:changeCurrent="swichNav" currentTab="{{currentType}}">
+    <swiper current="{{currentType}}" duration="300" bindchange="bindChange" style="height: {{windowHeight-60-35}}px;">
+        <block>
+            <swiper-item class="swiperTabContent">
+                <form bindsubmit="formSubmit" bindreset="formReset">
+                    <view class="input-area">
+                        <input class="weui-input" focus placeholder-style="color:#e5e5e5" placeholder="请输入待办事项" name="todoInput" />
+                    </view>
+                    <view class="btn-area">
+                        <button formType="submit">Submit</button>
+                        <button formType="reset">Reset</button>
+                    </view>
+                </form>
+            </swiper-item>
+
+            <swiper-item class="swiperTabContent">
+                <view class="no-data" hidden="{{todosList.length ? true : false}}">
+                    <view class="text">暂无事项</view>
+                </view>
+                <scroll-view scroll-y="true" class="todo-list" scroll-with-animation="true" lower-threshold="1" bindscrolltolower="scrolltolower" style="height: {{windowHeight-60-35}}px;" hidden="{{todosList.length ? flase : true}}">
+                    <view class="cells">
+                        <view class="cell" wx:for="{{todosList}}" wx:key="index">
+                            <view class="label">{{item.name}}</view>
+                            <view class="info">
+                                <switch type="checkbox" checked="{{item.done}}" bindchange="switchChange" data-id="{{item._id}}"/>
+                                <icon class="removeBtn" data-id="{{item._id}}" type="cancel" size="30" bindtap="removeTodo"/>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+
+            <swiper-item class="swiperTabContent">
+                <view class="no-data" hidden="{{completedList.length ? true : false}}">
+                    <view class="text">暂无事项</view>
+                </view>
+                <scroll-view scroll-y="true" class="todo-list" scroll-with-animation="true" lower-threshold="1" bindscrolltolower="scrolltolower" style="height: {{windowHeight-60-35}}px;" hidden="{{completedList.length ? flase : true}}">
+                    <view class="cells">
+                        <view class="cell" wx:for="{{completedList}}" wx:key="index">
+                            <view class="label">{{item.name}}</view>
+                            <view class="info">
+                                    <switch type="checkbox" checked="{{item.done}}" bindchange="switchChange" data-id="{{item._id}}"/>
+                                    <icon class="removeBtn" data-id="{{item._id}}" type="cancel" size="30" bindtap="removeTodo"/>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+
+        </block>
+    </swiper>
+</slideTab>

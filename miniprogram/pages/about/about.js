@@ -60,7 +60,38 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage(res) {
+        // return {
+        //     title: 'VWeather',
+        //     path: '/pages/index/index',
+        //     imageUrl: '',
+        // }
+    },
 
+    // 跳转详情
+    toSystem() {
+        wx.navigateTo({
+            url: '/pages/system/system',
+        })
+    },
+    // 跳转todolist
+    toTODOList(){
+        wx.navigateTo({
+            url: '/pages/todoList/todoList',
+        })
+    },
+    // 复制到剪贴板
+    copyHandler(e){
+        let _href = e.currentTarget.dataset['href'];
+        wx.setClipboardData({
+            data: _href,
+            success(res) {
+                wx.getClipboardData({
+                    success(res) {
+                        // console.log(res.data) // data
+                    }
+                })
+            }
+        })
     }
 })

@@ -1,0 +1,66 @@
+<!-- 用户信息 -->
+<view class="container">
+    <!-- 小程序信息 -->
+    <view class="miniprogramInfo">
+        <view class="icoBox">
+            <image class="ico" src='/images/miniprogram.png' mode='widthFix'></image>
+        </view>
+        <view class="icoInfoBox">
+            <text class="info">一款简洁大方的天气小程序...</text>
+        </view>
+
+        <view class="pageTitle">
+            开发指南
+        </view>
+        <view class="cells">
+            <view class="cell ceilico" bindtap="toSystem">
+                <view class="label">小程序API</view>
+                <view class="info f-link"></view>
+            </view>
+            <view class="cell ceilico" bindtap="toTODOList">
+                <view class="label">TODOList</view>
+                <view class="info f-link"></view>
+            </view>
+        </view>
+
+
+        <view class="pageTitle">
+            联系作者
+        </view>
+        <view class="cells">
+            <view class="cell">
+                <view class="label">
+                    <image class="itemIco" src='/images/github.png' mode='widthFix'></image>
+                </view>
+                <view class="info f-link" bindtap="copyHandler" data-href="https://github.com/augustVino">https://github.com/augustVino</view>
+            </view>
+            <view class="cell">
+                <view class="label">
+                    <image class="itemIco" src='/images/email.png' mode='widthFix'></image>
+                </view>
+                <view class="info f-link" bindtap="copyHandler" data-href="1846660535@qq.com">1846660535@qq.com</view>
+            </view>
+            <view class="cell">
+                <view class="label">
+                    <image class="itemIco" src='/images/qq.png' mode='widthFix'></image>
+                </view>
+                <view class="info f-link" bindtap="copyHandler" data-href="1846660535">1846660535</view>
+            </view>
+        </view>
+        
+        <view class="pageTitle">
+            鸣谢
+        </view>
+        <view class="cells">
+            <view class="cell">
+                <view class="label">和风天气</view>
+                <view class="info f-link" bindtap="copyHandler" data-href="https://www.heweather.com/">https://www.heweather.com/</view>
+            </view>
+            <view class="cell">
+                <view class="label">今日诗词</view>
+                <view class="info f-link" bindtap="copyHandler" data-href="https://www.jinrishici.com/">https://www.jinrishici.com/</view>
+            </view>
+        </view>
+    </view>
+    <view class='footer'>开发者 · Vino</view>
+</view>
