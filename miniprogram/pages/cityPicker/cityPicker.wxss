@@ -1,0 +1,9 @@
+/* miniprogram/pages/cityPicker/cityPicker.wxss */
+page{
+    background: #fff;
+}
+.pageTitle{
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}

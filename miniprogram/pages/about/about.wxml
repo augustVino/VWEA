@@ -21,6 +21,10 @@
                 <view class="label">TODOList</view>
                 <view class="info f-link"></view>
             </view>
+            <view class="cell ceilico" bindtap="toCityPicker">
+                <view class="label">CityPicker</view>
+                <view class="info f-link"></view>
+            </view>
         </view>
 
 
@@ -33,6 +37,12 @@
                     <image class="itemIco" src='/images/github.png' mode='widthFix'></image>
                 </view>
                 <view class="info f-link" bindtap="copyHandler" data-href="https://github.com/augustVino">https://github.com/augustVino</view>
+            </view>
+            <view class="cell">
+                <view class="label">
+                    <image class="itemIco" src='/images/blog.png' mode='widthFix'></image>
+                </view>
+                <view class="info f-link" bindtap="copyHandler" data-href="https://blog.augustvino.cn/">https://blog.augustvino.cn/</view>
             </view>
             <view class="cell">
                 <view class="label">

@@ -82,6 +82,12 @@ Page({
     },
     onLoad() {
         this.init();
+
+        // 设置页面导航条颜色
+        wx.setNavigationBarColor({
+            frontColor:'#000000',
+            backgroundColor: '#b7b8ba'
+        })
     },
     // 小程序顶部转发设置
     onShareAppMessage(res) {
@@ -103,7 +109,8 @@ Page({
         this.checkUpdate()
 
         // 获取城市数据
-        this.getCitiesData()
+        // this.getCitiesData()
+        
         // 获取今日诗词数据
         this.getFamousRemark()
 

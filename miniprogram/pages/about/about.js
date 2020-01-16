@@ -11,49 +11,49 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
 
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function () {
+    onHide: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function () {
+    onUnload: function() {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
+    onPullDownRefresh: function() {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function () {
+    onReachBottom: function() {
 
     },
 
@@ -75,13 +75,19 @@ Page({
         })
     },
     // 跳转todolist
-    toTODOList(){
+    toTODOList() {
         wx.navigateTo({
             url: '/pages/todoList/todoList',
         })
     },
+    // 跳转CityPicker
+    toCityPicker() {
+        wx.navigateTo({
+            url: '/pages/cityPicker/cityPicker',
+        })
+    },
     // 复制到剪贴板
-    copyHandler(e){
+    copyHandler(e) {
         let _href = e.currentTarget.dataset['href'];
         wx.setClipboardData({
             data: _href,

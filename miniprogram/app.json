@@ -2,6 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/about/about",
+        "pages/cityPicker/cityPicker",
         "pages/todoList/todoList",
         "pages/system/system",
         "pages/guideIndex/index",
