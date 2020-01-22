@@ -3,6 +3,7 @@ import {http} from '../utils/http.js'
 const HF_API = {
     normal: 'https://free-api.heweather.com/s6/weather',
     hour: 'https://free-api.heweather.com/s6/weather/hourly',
+    air: 'https://free-api.heweather.com/s6/air/now',
     key: '76ff10b3d9bf46a98a85395b44c9b6cf'
 };
 
@@ -16,6 +17,12 @@ module.exports = {
     hourWeather(param){
         return http({
             url: HF_API.hour,
+            data: { key: HF_API.key, ...param },
+        })
+    },
+    airType(param){
+        return http({
+            url: HF_API.air,
             data: { key: HF_API.key, ...param },
         })
     }

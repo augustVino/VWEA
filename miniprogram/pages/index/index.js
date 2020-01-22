@@ -1,7 +1,7 @@
 const jinrishici = require('../../utils/jinrishici.js')
 let utils = require('../../utils/utils')
 
-import { normalWeather, hourWeather } from '../../api/HF_API.js'
+import { normalWeather, hourWeather, airType } from '../../api/HF_API.js'
 
 let globalData = getApp().globalData
 let SYSTEMINFO = globalData.systeminfo
@@ -55,7 +55,22 @@ Page({
             'fsh': '钓鱼指数',
             'spi': '防晒指数',
         },
-        
+        airTypes:{
+            key: ['qlty','aqi','main','co','no2','so2','o3','pm10','pm25'],
+            val:{
+                qlty:'空气质量',
+                aqi: '空气质量指数',
+                main: '主要污染物',
+                co: '一氧化碳',
+                no2: '二氧化氮',
+                so2: '二氧化硫',
+                o3: '臭氧',
+                pm10: 'pm10',
+                pm25: 'pm25'
+            }
+        },
+        airTypeData:{},
+
         setting: {},
 
         region: ['河北省', '张家口市', '崇礼区'],
@@ -122,8 +137,8 @@ Page({
         const _this = this;
         wx.getLocation({
             success: (res) => {
-                this.getWeather(`${res.latitude},${res.longitude}`)
-                this.getHourly(`${res.latitude},${res.longitude}`)
+                this.getWeather(`${res.longitude},${res.latitude}`)
+                this.getHourly(`${res.longitude},${res.latitude}`)
                 callback && callback()
             },
             fail: (res) => {
@@ -167,7 +182,8 @@ Page({
             
             let curTime = data.update.loc.split('-');
             data.updateTimeFormat = curTime[1] + '-' + curTime[2];
-            
+            // 获取空气质量
+            this.getAirType(`${data.basic.parent_city}`)
             this.setData({
                 curWeather: data,
             })
@@ -176,6 +192,17 @@ Page({
                 title: '获取天气失败',
                 icon: 'none',
             })
+        })
+    },
+    // 获取空气质量
+    getAirType(location){
+        airType({ location}).then(res => {
+            // console.log(res.HeWeather6[0].air_now_city)
+            this.setData({
+                airTypeData: res.HeWeather6[0].air_now_city
+            })
+        }).catch(err => {
+            console.log(err)
         })
     },
     // 获取24小时逐3小时预报

@@ -61,12 +61,22 @@
                 </view>
             </view>
         </view>
+        <!-- 空气质量 -->
+        <view class='details' wx:if='{{airTypeData}}'>
+            <view class='detail' wx:for='{{airTypes.key}}' wx:key='index'>
+                <view>{{airTypes.val[item]}}</view>
+                <view>{{airTypeData[item]}}</view>
+            </view>
+        </view>
+        <!-- 风速、气压等 -->
         <view class='details'>
             <view class='detail' wx:for='{{detailsDic.key}}' wx:key='index'>
                 <view>{{detailsDic.val[item]}}</view>
                 <view>{{curWeather.now[item]}}</view>
             </view>
         </view>
+
+        
         <!-- 24 小时逐 3 小时预报 -->
         <view class='hourly' wx:if='{{hourlyDatas.length}}'>
             <view class='title'>24 小时逐 3 小时预报</view>
